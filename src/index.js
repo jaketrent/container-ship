@@ -1,1 +1,4 @@
-console.log(' this is a super container-ship')
+import App from './app'
+import wacked from './wacked'
+
+wacked.render(App(), document.getElementById('app'))

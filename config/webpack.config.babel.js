@@ -2,6 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const htmlWebpackTemplate = require('html-webpack-template')
 const path = require('path')
 
+const port = 3000
+
 module.exports = {
   entry: path.join(__dirname, '..', 'src', 'index.js'),
   output: {
@@ -21,11 +23,12 @@ module.exports = {
       inject: false,
       template: htmlWebpackTemplate,
       appMountId: 'app',
-      title: 'Container Ship'
+      title: 'Container Ship',
+      devServer: `http://localhost:${port}`
     })
   ],
   devServer: {
-    port: 3000,
+    port,
     stats: 'minimal'
   }
 }
