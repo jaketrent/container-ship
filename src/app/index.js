@@ -1,5 +1,5 @@
-import h from 'virtual-dom/h'
+import { div } from '../wacked/el'
 
 import css from './index.css'
 
-export default _ => h('div.' + css.app, 'Container Ship vdom Style!')
+export default _ => div(css.app, 'Container Ship vdom Style!')
