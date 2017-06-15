@@ -6,7 +6,8 @@ const formatClassName = (className = '') =>
   /^(\.|#)/.test(className) ? className : '.' + className.split(' ').join('.')
 
 function createElement(tagName, props, children) {
-  tagName = tagName + (props.className ? formatClassName(props.className) : '')
+  tagName =
+    tagName + (props && props.className ? formatClassName(props.className) : '')
   return h(tagName, props, children)
 }
 
