@@ -1,4 +1,4 @@
-import { div } from '../wacked/el'
+import { div } from 'wacked/el'
 
 import css from './index.css'
 
