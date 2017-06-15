@@ -1,4 +1,4 @@
 import App from './app'
-import wacked from 'wacked'
+import wakt from 'wakt'
 
-wacked.render(App(), document.getElementById('app'))
+wakt.render(App(), document.getElementById('app'))

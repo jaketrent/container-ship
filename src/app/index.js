@@ -1,9 +1,9 @@
-import wacked from 'wacked'
+import wakt from 'wakt'
 
 import css from './index.css'
 
 export default _ =>
-  wacked.createElement(
+  wakt.createElement(
     'div',
     { className: css.app },
     'Container Ship vdom Style!'
