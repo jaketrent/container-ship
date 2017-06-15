@@ -15,6 +15,28 @@ module.exports = {
         test: /\.js$/,
         use: ['babel-loader'],
         include: [path.resolve('src')]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+              importLoaders: 1
+            }
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: path.join(__dirname, 'postcss.config.js')
+              }
+            }
+          }
+        ]
       }
     ]
   },

@@ -1,3 +1,5 @@
 import h from 'virtual-dom/h'
 
-export default _ => h('div', 'Container Ship vdom Style!')
+import css from './index.css'
+
+export default _ => h('div.' + css.app, 'Container Ship vdom Style!')
