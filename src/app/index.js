@@ -1,5 +1,10 @@
-import { div } from 'wacked/el'
+import wacked from 'wacked'
 
 import css from './index.css'
 
-export default _ => div(css.app, 'Container Ship vdom Style!')
+export default _ =>
+  wacked.createElement(
+    'div',
+    { className: css.app },
+    'Container Ship vdom Style!'
+  )
