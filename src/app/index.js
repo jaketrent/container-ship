@@ -7,7 +7,8 @@ import Stack from './stack'
 
 export default styleable(css)(props =>
   <div className={props.css.app}>
-    <h1>Container Ship</h1>
+    <Stack />
     <Buttons />
+    <h1>Container Ship!</h1>
   </div>
 )

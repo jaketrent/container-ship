@@ -49,7 +49,8 @@ module.exports = {
       template: htmlWebpackTemplate,
       appMountId: 'app',
       title: 'Container Ship',
-      devServer: `http://localhost:${port}`
+      devServer: `http://localhost:${port}`,
+      mobile: true
     })
   ],
   devServer: {
