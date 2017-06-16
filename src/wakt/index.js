@@ -5,10 +5,15 @@ import * as vdom from './vdom'
 const formatClassName = (className = '') =>
   /^(\.|#)/.test(className) ? className : '.' + className.split(' ').join('.')
 
-function createElement(tagName, props, ...children) {
-  tagName =
-    tagName + (props && props.className ? formatClassName(props.className) : '')
-  return h(tagName, props, children)
+function createElement(nodeName, props, ...children) {
+  if (typeof nodeName === 'function') {
+    return nodeName.apply(this, [props, ...children])
+  } else {
+    nodeName =
+      nodeName +
+      (props && props.className ? formatClassName(props.className) : '')
+    return h(nodeName, props, children)
+  }
 }
 
 function render(vnode, el) {
