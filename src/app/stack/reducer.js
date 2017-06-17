@@ -9,7 +9,7 @@ const initialState = {
 
 const addContainer = (state, action) => ({
   ...state,
-  containers: [{ color: action.color, offset: rand() }].concat(state.containers)
+  containers: state.containers.concat([{ color: action.color, offset: rand() }])
 })
 
 export default (state = initialState, action = {}) => {

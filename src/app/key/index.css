@@ -5,7 +5,7 @@
   background: white;
   padding: 1.5vh 1vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   justify-content: flex-end;
   border-radius: 0 0 0 5px;
