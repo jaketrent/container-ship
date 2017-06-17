@@ -5,9 +5,10 @@ import styleable from 'styleable'
 import css from './index.css'
 import store from '../store'
 
-const mapStateToProps = state => ({
-  containers: [{ color: 'green' }]
-})
+const mapStateToProps = state => 
+  (
+    { containers: state.stack.containers }
+  )
 
 const Container = props =>
   <div
