@@ -2,8 +2,9 @@ import types from '../common/types'
 
 export const TYPES = types('key', 'INIT', 'RETRY')
 
-export const init = _ => ({
-  type: TYPES.INIT
+export const init = count => ({
+  type: TYPES.INIT,
+  count
 })
 
 export const retry = _ => ({

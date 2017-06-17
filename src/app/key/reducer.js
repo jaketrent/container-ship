@@ -1,3 +1,4 @@
+import * as array from '../common/array'
 import * as rand from '../common/rand'
 import { TYPES } from './actions'
 
@@ -7,7 +8,7 @@ const initialState = {
 
 const init = (state, action) => ({
   ...state,
-  containers: [1, 2, 3].map(_ => ({
+  containers: array.of(action.count || 3).map(_ => ({
     color: rand.from(['red', 'yellow', 'blue'])
   }))
 })
