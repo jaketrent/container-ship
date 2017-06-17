@@ -1,4 +1,10 @@
-import App from './app'
 import wakt from 'wakt'
 
-wakt.render(App(), document.getElementById('app'))
+import App from './app'
+import store from './app/store'
+
+const el = document.getElementById('app')
+
+store.subscribe(_ => wakt.render(App(), el))
+
+wakt.render(App(), el)

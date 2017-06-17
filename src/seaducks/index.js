@@ -25,6 +25,9 @@ class Store {
   getPrevState() {
     return this.prevState
   }
+  subscribe(fn) {
+    this.subscribers = this.subscribers.concat([fn])
+  }
   dispatch(action) {
     this.prevState = this.state
     this.state = reduce(this.reducers, this.state, action)
