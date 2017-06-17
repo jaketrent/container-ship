@@ -1,12 +1,15 @@
 import { TYPES as BUTTON_TYPES } from '../buttons/actions'
 
+const rand = (min = -8, max = 8) =>
+  Math.floor(Math.random() * (max - min + 1)) + min
+
 const initialState = {
   containers: []
 }
 
 const addContainer = (state, action) => ({
   ...state,
-  containers: [{ color: action.color }].concat(state.containers)
+  containers: [{ color: action.color, offset: rand() }].concat(state.containers)
 })
 
 export default (state = initialState, action = {}) => {

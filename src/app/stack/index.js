@@ -10,12 +10,15 @@ const mapStateToProps = state => ({ containers: state.stack.containers })
 const Container = props =>
   <div
     className={props.css.container}
-    style={{ backgroundColor: props.color }}
+    style={{
+      backgroundColor: props.color,
+      transform: `translateX(${props.offset}px)`
+    }}
   />
 
 const Stack = props =>
   <div className={props.css.stack}>
-    {props.containers.map(c => <Container css={props.css} color={c.color} />)}
+    {props.containers.map(c => <Container css={props.css} {...c} />)}
   </div>
 
 export default connect(mapStateToProps, null, store)(styleable(css)(Stack))
