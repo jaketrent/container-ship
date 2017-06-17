@@ -15,6 +15,8 @@ class Store {
     this.reducers = reducers
     this.state = { ...reduceInitialState(reducers), ...state }
 
+    this.subscribers = []
+
     this.dispatch = this.dispatch.bind(this)
   }
   getState() {
@@ -27,8 +29,13 @@ class Store {
     this.prevState = this.state
     this.state = reduce(this.reducers, this.state, action)
 
-    // TODO: notify subscribers
+    this.notifySubscribers()
+  }
+  notifySubscribers() {
+    this.subscribers.forEach(s => s(this.prevState, this.state))
   }
 }
+
 const createStore = (reducers, state) => new Store(reducers, state)
+
 export { createStore }
