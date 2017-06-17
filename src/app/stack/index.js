@@ -5,10 +5,7 @@ import styleable from 'styleable'
 import css from './index.css'
 import store from '../store'
 
-const mapStateToProps = state => 
-  (
-    { containers: state.stack.containers }
-  )
+const mapStateToProps = state => ({ containers: state.stack.containers })
 
 const Container = props =>
   <div
@@ -21,4 +18,4 @@ const Stack = props =>
     {props.containers.map(c => <Container css={props.css} color={c.color} />)}
   </div>
 
-export default connect(mapStateToProps, store)(styleable(css)(Stack))
+export default connect(mapStateToProps, null, store)(styleable(css)(Stack))

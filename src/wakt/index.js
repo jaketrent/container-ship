@@ -5,6 +5,7 @@ import * as vdom from './vdom'
 const formatClassName = (className = '') =>
   /^(\.|#)/.test(className) ? className : '.' + className.split(' ').join('.')
 
+// TODO: transform react-style onClick to lowercase
 function createElement(nodeName, props, ...children) {
   if (typeof nodeName === 'function') {
     return nodeName.apply(this, [props, ...children])
