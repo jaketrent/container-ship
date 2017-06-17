@@ -8,7 +8,7 @@ const formatClassName = (className = '') =>
 // TODO: transform react-style onClick to lowercase
 function createElement(nodeName, props, ...children) {
   if (typeof nodeName === 'function') {
-    return nodeName.apply(this, [props, ...children])
+    return nodeName.apply(this, [{ ...props, children }])
   } else {
     nodeName =
       nodeName +
