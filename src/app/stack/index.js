@@ -3,6 +3,7 @@ import wakt from 'wakt'
 import styleable from 'styleable'
 
 import css from './index.css'
+import ShipTop from '../common/ui/ship-top'
 import store from '../store'
 
 const mapStateToProps = state => ({
@@ -19,8 +20,8 @@ const Container = props =>
   />
 
 const Stack = props =>
-  <div className={props.css.stack}>
+  <ShipTop>
     {props.containers.map(c => <Container css={props.css} {...c} />)}
-  </div>
+  </ShipTop>
 
 export default connect(mapStateToProps, null, store)(styleable(css)(Stack))

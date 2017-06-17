@@ -1,16 +1,3 @@
-.stack {
-  position: fixed;
-  left: 0;
-  bottom: 12em;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: flex-start;
-  border-bottom: 5px solid grey;
-  background: linear-gradient(180deg, blue, skyblue);
-}
 .container {
   height: 7vh;
   width: 21vh;
