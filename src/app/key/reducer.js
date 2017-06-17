@@ -15,7 +15,8 @@ const init = (state, action) => ({
 // TODO: reducer helper
 export default (state = initialState, action = {}) => {
   const handlers = {
-    [TYPES.INIT]: init
+    [TYPES.INIT]: init,
+    [TYPES.RETRY]: init
   }
 
   return handlers[action.type] ? handlers[action.type](state, action) : state
