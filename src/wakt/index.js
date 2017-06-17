@@ -22,8 +22,10 @@ const renders = {}
 function render(vnode, el) {
   if (renders[el]) {
     const { currentVNode, rootNode } = renders[el]
-    let patchedRootNode = vdom.update(currentVNode, vnode, rootNode)
-    renders[el] = { currentVNode: vnode, rootNode: patchedRootNode }
+    renders[el] = {
+      currentVNode: vnode,
+      rootNode: vdom.update(currentVNode, vnode, rootNode)
+    }
   } else {
     renders[el] = { currentVNode: vnode, rootNode: vdom.render(vnode, el) }
   }
