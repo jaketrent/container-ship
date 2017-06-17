@@ -1,12 +1,12 @@
 import { TYPES as BUTTON_TYPES } from '../buttons/actions'
 
 const initialState = {
-  containers: [{ color: 'orange' }]
+  containers: []
 }
 
 const addContainer = (state, action) => ({
   ...state,
-  containers: state.containers.concat([{ color: action.color }])
+  containers: [{ color: action.color }].concat(state.containers)
 })
 
 export default (state = initialState, action = {}) => {
