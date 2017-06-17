@@ -17,8 +17,19 @@ function createElement(nodeName, props, ...children) {
   }
 }
 
-function render(vnode, el) {
-  vdom.render(vnode, el)
+let rootNode
+let currentVNode
+
+// TODO: consolidate to render, allowing for diff vnode/el components
+function update(vnode) {
+  let patchedRootNode = vdom.update(currentVNode, vnode, rootNode)
+  rootNode = patchedRootNode
+  currentVNode = vnode
 }
 
-export default { createElement, render }
+function render(vnode, el) {
+  currentVNode = vnode
+  rootNode = vdom.render(vnode, el)
+}
+
+export default { createElement, render, update }

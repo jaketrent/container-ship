@@ -5,6 +5,7 @@ const path = require('path')
 const port = 3000
 
 module.exports = {
+  devtool: 'source-map',
   entry: path.join(__dirname, '..', 'src', 'index.js'),
   output: {
     path: 'dist'
