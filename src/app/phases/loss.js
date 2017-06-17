@@ -6,8 +6,5 @@ import Key from '../key'
 
 export default _ =>
   <div>
-    <Stack />
-    <Buttons />
-    <h1>Container Ship!</h1>
-    <Key />
+    <h1>You lost!</h1>
   </div>

@@ -11,8 +11,5 @@ store.dispatch(keyActions.init())
 
 export default _ =>
   <div>
-    <Stack />
-    <Buttons />
-    <h1>Container Ship!</h1>
-    <Key />
+    Loading...
   </div>
