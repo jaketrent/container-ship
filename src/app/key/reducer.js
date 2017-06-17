@@ -1,20 +1,22 @@
-/* import { TYPES } from './actions'
- * */
+import * as rand from '../common/rand'
+import { TYPES } from './actions'
+
 const initialState = {
-  containers: [{ color: 'red' }, { color: 'blue' }, { color: 'yellow' }]
+  containers: []
 }
 
-/* const addContainer = (state, action) => ({
- *   ...state,
- *   containers: [{ color: action.color, offset: rand() }].concat(state.containers)
- * })
- * */
+const init = (state, action) => ({
+  ...state,
+  containers: [1, 2, 3].map(_ => ({
+    color: rand.from(['red', 'yellow', 'blue'])
+  }))
+})
+
 // TODO: reducer helper
 export default (state = initialState, action = {}) => {
-  /* const handlers = {
-   *   [BUTTON_TYPES.ADD_CONTAINER]: addContainer
-   * }
+  const handlers = {
+    [TYPES.INIT]: init
+  }
 
-   * return handlers[action.type] ? handlers[action.type](state, action) : state*/
-  return state
+  return handlers[action.type] ? handlers[action.type](state, action) : state
 }
