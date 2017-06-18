@@ -2,7 +2,7 @@
   position: fixed;
   left: 0;
   bottom: 12em;
-  height: 100%;
+  height: calc(100% - 12em);
   width: 100%;
   display: flex;
   flex-direction: column-reverse;

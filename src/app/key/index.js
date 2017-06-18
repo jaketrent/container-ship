@@ -12,13 +12,14 @@ const mapStateToProps = state => {
     isMatch: (state.stack.containers[i] || {}).color === kc.color
   }))
   const isWin = containers.every(c => c.isMatch)
+  const count = state.key.containers.length
 
-  return { containers, isWin }
+  return { containers, isWin, count }
 }
 
 const mapDispatchToProps = dispatch => ({
-  retry() {
-    dispatch(actions.retry())
+  retry(count) {
+    dispatch(actions.retry(count))
   }
 })
 
@@ -32,7 +33,10 @@ const Container = props =>
 
 const renderRetry = props =>
   true || props.isWin
-    ? <button className={props.css.retry} onclick={props.retry}>
+    ? <button
+        className={props.css.retry}
+        onclick={_ => props.retry(props.count)}
+      >
         A
       </button>
     : null

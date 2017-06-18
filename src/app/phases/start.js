@@ -39,9 +39,9 @@ const Option = props =>
 
 const Difficulty = props =>
   <div className={props.css.difficulty}>
-    <Option {...props} label="Easy" count={3} color="blue" />
-    <Option {...props} label="to" count={6} color="yellow" />
-    <Option {...props} label="Hard" count={12} color="red" />
+    <Option {...props} label="Drydock" count={3} color="blue" />
+    <Option {...props} label="Open Water" count={6} color="yellow" />
+    <Option {...props} label="Somalia" count={12} color="red" />
   </div>
 
 const Start = props =>

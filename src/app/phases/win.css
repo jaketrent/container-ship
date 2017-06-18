@@ -1,0 +1,31 @@
+@keyframe wobble {
+  0% { }
+  50% { }
+  100% {  }
+}
+.win {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  animation: wobble 500ms infinite;
+  pointer-events: none;
+}
+.banner {
+  flex: 1;
+  padding: 1em;
+  font-size: 4em;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-family: 'Architects Daughter', sans-serif;
+  background: green;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 0 15px 20px rgba(0, 0, 0, 0.3);
+  background-image: repeating-linear-gradient(30deg,
+      hsla(0, 0%, 100%, .05),
+      hsla(0, 0%, 100%, .05) 4.5vh,
+      transparent 0, transparent 9vh);
+}

@@ -7,6 +7,7 @@ export const init = count => ({
   count
 })
 
-export const retry = _ => ({
-  type: TYPES.RETRY
+export const retry = count => ({
+  type: TYPES.RETRY,
+  count
 })
