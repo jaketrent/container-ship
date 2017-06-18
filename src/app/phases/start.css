@@ -10,28 +10,28 @@
   padding: 1em;
   margin: 0 0.3em 1.5em 0.3em;
   border-radius: 8px;
-  box-shadow: 0px 3px 0px rgba(0,0,0,0.3), 0px 3px 6px rgba(0,0,0,.5);
+  box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.3), 0px 3px 6px rgba(0, 0, 0, .5);
   background: #fff;
 }
 .button {
-	position: relative;
-  color: rgba(255,255,255,1);
+  position: relative;
+  color: rgba(255, 255, 255, 1);
   text-decoration: none;
-  background-color: rgba(219,87,5,1);
+  background-color: rgba(219, 87, 5, 1);
   font-weight: 700;
   font-size: 1.5em;
   display: block;
   padding: 0.25em 0.875em;
   border-radius: 8px;
-  box-shadow: 0px 9px 0px rgba(219,31,5,1), 0px 9px 25px rgba(0,0,0,.7);
-	text-align: center;
+  box-shadow: 0px 9px 0px rgba(219, 31, 5, 1), 0px 9px 25px rgba(0, 0, 0, .7);
+  text-align: center;
   border: 0;
-	transition: all .1s ease;
+  transition: all .1s ease;
   outline: none;
   cursor: pointer;
 }
 .button:active {
-  box-shadow: 0px 3px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,.9);
+  box-shadow: 0px 3px 0px rgba(219, 31, 5, 1), 0px 3px 6px rgba(0, 0, 0, .9);
   position: relative;
   top: 6px;
 }
@@ -43,9 +43,12 @@
   width: 6vh;
   border-radius: 2px;
   margin-bottom: 1px;
-  border: 2px solid rgba(0,0,0,.2);
-  background-image: repeating-linear-gradient(30deg,
-      hsla(0, 0%, 100%, .2),
-      hsla(0, 0%, 100%, .2) 0.3vh,
-      transparent 0, transparent 0.6vh);
+  border: 2px solid rgba(0, 0, 0, .2);
+  background-image: repeating-linear-gradient(
+    30deg,
+    hsla(0, 0%, 100%, .2),
+    hsla(0, 0%, 100%, .2) 0.3vh,
+    transparent 0,
+    transparent 0.6vh
+  );
 }
