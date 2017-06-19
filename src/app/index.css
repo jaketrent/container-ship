@@ -8,11 +8,3 @@ body {
   padding: 0;
   background: #efefef;
 }
-h1 {
-  position: relative;
-  font-family: 'Architects Daughter', sans-serif;
-  color: #fff;
-  font-size: 9vmax;
-  padding: 0 2vw;
-  text-align: center;
-}

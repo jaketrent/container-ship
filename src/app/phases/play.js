@@ -1,6 +1,7 @@
 import wakt from 'wakt'
 
 import Buttons from '../buttons'
+import Title from '../common/ui/title'
 import Key from '../key'
 import Loss from './loss'
 import Stack from '../stack'
@@ -16,7 +17,7 @@ export default props =>
   <div>
     <Stack />
     <Buttons />
-    <h1>Container Ship!</h1>
+    <Title />
     <Key />
     {renderPlayState(props)}
   </div>

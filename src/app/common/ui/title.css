@@ -1,0 +1,9 @@
+.title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 1vh 1vw;
+  margin: 0;
+  font-family: 'Architects Daughter', sans-serif;
+  color: #fff;
+}
