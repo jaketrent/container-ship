@@ -1,14 +1,18 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const htmlWebpackTemplate = require('html-webpack-template')
 const path = require('path')
+const webpack = require('webpack')
 
 const port = 3000
+
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
   devtool: 'source-map',
   entry: path.join(__dirname, '..', 'src', 'index.js'),
   output: {
-    path: 'dist'
+    path: path.resolve('dist'),
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -50,7 +54,7 @@ module.exports = {
       template: htmlWebpackTemplate,
       appMountId: 'app',
       title: 'Container Ship',
-      devServer: `http://localhost:${port}`,
+      devServer: isProd && `http://localhost:${port}`,
       mobile: true
     })
   ],

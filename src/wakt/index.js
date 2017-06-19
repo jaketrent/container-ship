@@ -3,8 +3,10 @@ import svg from 'virtual-dom/virtual-hyperscript/svg'
 
 import * as vdom from './vdom'
 
-const formatClassName = (className = '') =>
-  /^(\.|#)/.test(className) ? className : '.' + className.split(' ').join('.')
+const formatClassName = className =>
+  /^(\.|#)/.test(className || '')
+    ? className || ''
+    : '.' + (className || '').split(' ').join('.')
 
 const isSvg = nodeName => ['svg', 'g', 'path'].includes(nodeName)
 
