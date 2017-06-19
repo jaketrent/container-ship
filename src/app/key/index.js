@@ -44,7 +44,7 @@ const renderRetry = props =>
 const Key = props =>
   <div className={props.css.key}>
     {renderRetry(props)}
-    {props.containers.map(c => <Container {...props} {...c} />)}
+    {props.containers.map((c, i) => <Container key={i} {...props} {...c} />)}
   </div>
 
 export default connect(mapStateToProps, mapDispatchToProps, store)(

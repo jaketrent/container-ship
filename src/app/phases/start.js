@@ -18,9 +18,10 @@ const Stack = props =>
   <div className={props.css.stack}>
     {array
       .of(props.count)
-      .map(_ =>
+      .map((_, i) =>
         <div
           className={props.css.container}
+          key={i}
           style={{ background: props.color }}
         />
       )}

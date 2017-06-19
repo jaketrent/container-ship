@@ -21,7 +21,9 @@ const Container = props =>
 
 const Stack = props =>
   <ShipTop>
-    {props.containers.map(c => <Container css={props.css} {...c} />)}
+    {props.containers.map((c, i) =>
+      <Container css={props.css} key={i} {...c} />
+    )}
   </ShipTop>
 
 export default connect(mapStateToProps, null, store)(styleable(css)(Stack))
