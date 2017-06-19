@@ -1,5 +1,6 @@
 .difficulty {
   display: flex;
+  flex-direction: column;
   align-items: stretch;
 }
 .option {
@@ -7,12 +8,16 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  padding: 1em;
+  padding: 0.5em 1em 1em 1em;
   margin: 0 0.3em 1.5em 0.3em;
   border-radius: 8px;
   box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.3), 0px 3px 6px rgba(0, 0, 0, .5);
   background: #fff;
   overflow: hidden;
+}
+.stack {
+  display: none;
+  margin-bottom: 0.5em;
 }
 .button {
   flex: none;
@@ -53,4 +58,12 @@
     transparent 0,
     transparent 0.6vh
   );
+}
+@media screen and (min-width: 581px) {
+  .difficulty {
+    flex-direction: row;
+  }
+  .stack {
+    display: block;
+  }
 }

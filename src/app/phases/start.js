@@ -5,7 +5,7 @@ import styleable from 'styleable'
 import * as array from '../common/array'
 import css from './start.css'
 import * as keyActions from '../key/actions'
-import ShipTop from '../common/ui/ship-top'
+import Ocean from '../common/ui/ocean'
 import store from '../store'
 import Title from '../common/ui/title'
 
@@ -30,7 +30,9 @@ const Stack = props =>
 
 const Option = props =>
   <div className={props.css.option}>
-    <Stack {...props} />
+    <div className={props.css.stack}>
+      <Stack {...props} />
+    </div>
     <button
       className={props.css.button}
       onclick={_ => props.start(props.count)}
@@ -47,9 +49,9 @@ const Difficulty = props =>
   </div>
 
 const Start = props =>
-  <ShipTop>
+  <Ocean>
     <Difficulty {...props} />
     <Title />
-  </ShipTop>
+  </Ocean>
 
 export default connect(null, mapDispatchToProps, store)(styleable(css)(Start))
