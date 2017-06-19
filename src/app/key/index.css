@@ -48,3 +48,10 @@
   position: relative;
   top: 2px;
 }
+.arrow {
+  fill: white;
+  height: 1.2em;
+  width: 1.2em;
+  transform: translateY(0.1em);
+  /* transform: rotateX(36deg) rotateY(314deg) skewX(50deg) skewY(11deg) scaleY(1.3) scaleX(1) translate(-0.2em, 0.2em); */
+}
