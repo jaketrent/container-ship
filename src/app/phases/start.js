@@ -3,6 +3,7 @@ import wakt from 'wakt'
 import styleable from 'styleable'
 
 import * as array from '../common/array'
+import Button from '../common/ui/button'
 import css from './start.css'
 import * as keyActions from '../key/actions'
 import Ocean from '../common/ui/ocean'
@@ -33,12 +34,9 @@ const Option = props =>
     <div className={props.css.stack}>
       <Stack {...props} />
     </div>
-    <button
-      className={props.css.button}
-      onclick={_ => props.start(props.count)}
-    >
+    <Button onclick={_ => props.start(props.count)}>
       {props.label}
-    </button>
+    </Button>
   </div>
 
 const Difficulty = props =>

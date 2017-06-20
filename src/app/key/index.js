@@ -3,6 +3,7 @@ import styleable from 'styleable'
 import wakt from 'wakt'
 
 import * as actions from './actions'
+import Button from '../common/ui/button'
 import css from './index.css'
 import store from '../store'
 
@@ -48,12 +49,12 @@ const Container = props =>
 
 const renderRetry = props =>
   true || props.isWin
-    ? <button
-        className={props.css.retry}
+    ? <Button
+        css={{ button: props.css.retry }}
         onclick={_ => props.retry(props.count)}
       >
         <RetryArrow {...props} />
-      </button>
+      </Button>
     : null
 
 const Key = props =>
