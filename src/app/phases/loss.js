@@ -1,13 +1,5 @@
 import wakt from 'wakt'
-import styleable from 'styleable'
 
-import css from './loss.css'
-import Stack from '../stack'
-import Buttons from '../buttons'
-import Key from '../key'
+import Banner from './banner'
 
-export default styleable(css)(props =>
-  <div className={props.css.win}>
-    <div className={props.css.banner}>You Lost!</div>
-  </div>
-)
+export default _ => <Banner color="red">You lost!</Banner>

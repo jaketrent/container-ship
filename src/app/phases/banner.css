@@ -1,12 +1,4 @@
-@keyframe wobble {
-  0% {
-  }
-  50% {
-  }
-  100% {
-  }
-}
-.win {
+.fullscreen {
   position: fixed;
   top: 0;
   left: 0;
@@ -14,17 +6,16 @@
   width: 100%;
   display: flex;
   align-items: center;
-  animation: wobble 500ms infinite;
   pointer-events: none;
 }
 .banner {
   flex: 1;
   padding: 1em;
-  font-size: 4em;
+  font-size: 3em;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
   color: #fff;
   font-family: 'Architects Daughter', sans-serif;
-  background: green;
+  background: grey;
   text-align: center;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 0 15px 20px rgba(0, 0, 0, 0.3);
   background-image: repeating-linear-gradient(
