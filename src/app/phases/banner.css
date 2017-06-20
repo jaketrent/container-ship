@@ -6,17 +6,17 @@
   width: 100%;
   display: flex;
   align-items: center;
-  pointer-events: none;
 }
 .banner {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1em;
-  font-size: 3em;
-  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
-  color: #fff;
-  font-family: 'Architects Daughter', sans-serif;
   background: grey;
   text-align: center;
+  border: 0;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5), 0 15px 20px rgba(0, 0, 0, 0.3);
   background-image: repeating-linear-gradient(
     30deg,
@@ -25,4 +25,33 @@
     transparent 0,
     transparent 9vh
   );
+}
+.text {
+  font-size: 3em;
+  color: #fff;
+  font-family: 'Architects Daughter', sans-serif;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.5);
+}
+.button {
+  flex: none;
+  position: relative;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  background-color: rgba(219, 87, 5, 1);
+  font-weight: 700;
+  font-size: 1.5em;
+  display: block;
+  padding: 0.25em 0.875em;
+  border-radius: 8px;
+  box-shadow: 0px 9px 0px rgba(219, 31, 5, 1), 0px 9px 25px rgba(0, 0, 0, .7);
+  text-align: center;
+  border: 0;
+  transition: all .1s ease;
+  outline: none;
+  cursor: pointer;
+}
+.button:active {
+  box-shadow: 0px 3px 0px rgba(219, 31, 5, 1), 0px 3px 6px rgba(0, 0, 0, .9);
+  position: relative;
+  top: 6px;
 }

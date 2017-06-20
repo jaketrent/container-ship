@@ -13,7 +13,7 @@ const addContainer = (state, action) => ({
   ])
 })
 
-const retry = (state, action) => ({
+const reset = (state, action) => ({
   ...state,
   containers: []
 })
@@ -21,7 +21,8 @@ const retry = (state, action) => ({
 export default (state = initialState, action = {}) => {
   const handlers = {
     [BUTTON_TYPES.ADD_CONTAINER]: addContainer,
-    [KEY_TYPES.RETRY]: retry
+    [KEY_TYPES.RETRY]: reset,
+    [KEY_TYPES.RESET]: reset
   }
 
   return handlers[action.type] ? handlers[action.type](state, action) : state

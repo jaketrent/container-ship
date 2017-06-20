@@ -13,11 +13,17 @@ const init = (state, action) => ({
   }))
 })
 
+const reset = (state, action) => ({
+  ...state,
+  containers: []
+})
+
 // TODO: reducer helper
 export default (state = initialState, action = {}) => {
   const handlers = {
     [TYPES.INIT]: init,
-    [TYPES.RETRY]: init
+    [TYPES.RETRY]: init,
+    [TYPES.RESET]: reset
   }
 
   return handlers[action.type] ? handlers[action.type](state, action) : state
