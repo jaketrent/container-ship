@@ -24,11 +24,16 @@ const AddContainer = props =>
     </Button>
   </div>
 
-const Buttons = props =>
-  <div className={props.css.buttons}>
-    <AddContainer {...props} color="red" letter="Q" />
-    <AddContainer {...props} color="yellow" letter="W" />
-    <AddContainer {...props} color="blue" letter="E" />
-  </div>
+class Buttons extends wakt.Component {
+  render() {
+    return (
+      <div className={this.props.css.buttons}>
+        <AddContainer {...this.props} color="red" letter="Q" />
+        <AddContainer {...this.props} color="yellow" letter="W" />
+        <AddContainer {...this.props} color="blue" letter="E" />
+      </div>
+    )
+  }
+}
 
 export default connect(null, mapPropsToDispatch, store)(styleable(css)(Buttons))

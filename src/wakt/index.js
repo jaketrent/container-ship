@@ -13,10 +13,18 @@ const isSvg = nodeName => ['svg', 'g', 'path'].includes(nodeName)
 
 const isCustomElement = node => typeof node === 'function'
 
+const isClassStyleComponent = node => node.type === 'wakt.Component'
+
+const renderClassStyleComponent = (Vnode, props, ...children) => {
+  return new Vnode({ ...props, children }).render()
+}
+
 // TODO: transform react-style onClick to lowercase
 function createElement(nodeName, props, ...children) {
   if (isCustomElement(nodeName)) {
-    return nodeName.apply(this, [{ ...props, children }])
+    if (isClassStyleComponent(nodeName))
+      return renderClassStyleComponent(nodeName, props, ...children)
+    else return nodeName.apply(this, [{ ...props, children }])
   } else if (isSvg(nodeName)) {
     if (props && props.className) props.class = props.className
 
@@ -45,4 +53,14 @@ function render(vnode, el) {
   }
 }
 
-export default { createElement, render }
+class Component {
+  constructor(props) {
+    this.props = props
+  }
+  render() {}
+}
+Component.type = 'wakt.Component'
+
+const isClass = vnode => vnode && vnode.type === 'wakt.Component'
+
+export default { Component, createElement, isClass, render }
