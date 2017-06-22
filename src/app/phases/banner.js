@@ -17,7 +17,7 @@ const Banner = props =>
   <div className={props.css.fullscreen}>
     <div className={props.css.banner} style={{ background: props.color }}>
       <div className={props.css.text}>{props.children}</div>
-      <Button onclick={props.reset}>
+      <Button ev-click={props.reset}>
         Start over
       </Button>
     </div>

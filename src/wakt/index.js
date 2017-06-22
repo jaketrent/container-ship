@@ -1,3 +1,4 @@
+import Delegator from 'dom-delegator'
 import h from 'virtual-dom/h'
 import svg from 'virtual-dom/virtual-hyperscript/svg'
 
@@ -10,9 +11,11 @@ const formatClassName = className =>
 
 const isSvg = nodeName => ['svg', 'g', 'path'].includes(nodeName)
 
+const isCustomElement = node => typeof node === 'function'
+
 // TODO: transform react-style onClick to lowercase
 function createElement(nodeName, props, ...children) {
-  if (typeof nodeName === 'function') {
+  if (isCustomElement(nodeName)) {
     return nodeName.apply(this, [{ ...props, children }])
   } else if (isSvg(nodeName)) {
     if (props && props.className) props.class = props.className
@@ -27,6 +30,7 @@ function createElement(nodeName, props, ...children) {
 }
 
 const renders = {}
+let evtDelegator = null
 
 function render(vnode, el) {
   if (renders[el]) {
@@ -36,6 +40,7 @@ function render(vnode, el) {
       rootNode: vdom.update(currentVNode, vnode, rootNode)
     }
   } else {
+    evtDelegator = new Delegator()
     renders[el] = { currentVNode: vnode, rootNode: vdom.render(vnode, el) }
   }
 }

@@ -18,7 +18,7 @@ const AddContainer = props =>
     <div className={props.css.color} style={{ backgroundColor: props.color }} />
     <Button
       css={{ button: props.css.button }}
-      onclick={_ => props.addContainer(props.color)}
+      ev-click={_ => props.addContainer(props.color)}
     >
       {props.letter}
     </Button>

@@ -34,7 +34,7 @@ const Option = props =>
     <div className={props.css.stack}>
       <Stack {...props} />
     </div>
-    <Button onclick={_ => props.start(props.count)}>
+    <Button ev-click={_ => props.start(props.count)}>
       {props.label}
     </Button>
   </div>

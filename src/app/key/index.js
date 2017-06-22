@@ -51,7 +51,7 @@ const renderRetry = props =>
   true || props.isWin
     ? <Button
         css={{ button: props.css.retry }}
-        onclick={_ => props.retry(props.count)}
+        ev-click={_ => props.retry(props.count)}
       >
         <RetryArrow {...props} />
       </Button>
