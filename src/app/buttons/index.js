@@ -24,16 +24,30 @@ const AddContainer = props =>
     </Button>
   </div>
 
-class Buttons extends wakt.Component {
-  render() {
-    return (
-      <div className={this.props.css.buttons}>
-        <AddContainer {...this.props} color="red" letter="Q" />
-        <AddContainer {...this.props} color="yellow" letter="W" />
-        <AddContainer {...this.props} color="blue" letter="E" />
-      </div>
-    )
+const keys = {
+  81: 'red',
+  87: 'yellow',
+  69: 'blue'
+}
+class Hook {
+  constructor(props) {
+    this.handleKeyUp = evt => {
+      const color = keys[evt.which]
+      if (color) props.addContainer(color)
+    }
+  }
+  hook() {
+    window.addEventListener('keyup', this.handleKeyUp)
+  }
+  unhook() {
+    window.removeEventListener('keyup', this.handleKeyUp)
   }
 }
+const Buttons = props =>
+  <div className={props.css.buttons} ev-mount={new Hook(props)}>
+    <AddContainer {...props} color="red" letter="Q" />
+    <AddContainer {...props} color="yellow" letter="W" />
+    <AddContainer {...props} color="blue" letter="E" />
+  </div>
 
 export default connect(null, mapPropsToDispatch, store)(styleable(css)(Buttons))
