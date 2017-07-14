@@ -1,13 +1,13 @@
 export const connect = (
   mapStateToProps,
-  mapStateToDispatch,
+  mapDispatchToProps,
   store
 ) => vnode => props => {
   const stateProps = typeof mapStateToProps === 'function'
     ? mapStateToProps(store.getState(), props)
     : {}
-  const actionProps = typeof mapStateToDispatch === 'function'
-    ? mapStateToDispatch(store.dispatch, props)
+  const actionProps = typeof mapDispatchToProps === 'function'
+    ? mapDispatchToProps(store.dispatch, props)
     : {}
   const allProps = { ...props, ...actionProps, ...stateProps }
   return vnode(allProps)
